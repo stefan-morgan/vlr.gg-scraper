@@ -308,7 +308,7 @@ class Matches:
                         src = agent['src']
                         acs = ACS
                         agents.append({'name' : title, 'img': "https://vlr.gg" + src})
-                    member = {'name': name, 'team': teamName, 'agents': agents, 'acs': acs, 'kills' : kills, 'deaths': deaths, 'assists': assists, 'HSpercent': hs}
+                    member = {'name': name, 'team': teamName, 'agents': agents, 'rating': acs, 'kills' : kills, 'deaths': deaths, 'assists': assists, 'HSpercent': hs}
                     members.append(member)
                     print(name, teamName, agents)
                 print('')

@@ -6,6 +6,7 @@ from src.player import Player
 from src.events import Events
 from src.streams import Streams
 from src.rankings import Rankings
+from src.series import Series
 
 app = FastAPI(
     title="VLR.gg Scraper",
@@ -130,3 +131,31 @@ async def rankings(region):
     """
     rankings = Rankings()
     return rankings.regionRankings(region)
+
+@app.get("/series/", tags=["series"])
+async def series(id):
+    """
+    Gets list of events for one of the following:
+        
+    2 -> First Strike
+    
+    3 -> Valorant Champions Tour 2021
+    
+    5 -> Nerd Street Gamer Monthly
+    
+    8 -> Valorant Game Changers 2021
+    
+    11 -> Nerd Street Summer Championship 2021
+    
+    13 -> Nerd Street Winter Championship 2021
+    
+    14 -> Valorant Champions Tour 2022
+    
+    17 -> Valorant Game Changers 2022
+    
+    20 -> Nerd Street Summer Championship 2022
+    
+    """
+    series = Series()
+    return series.series(id)
+    
